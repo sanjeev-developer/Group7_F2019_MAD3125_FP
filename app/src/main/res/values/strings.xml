@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">EmployeeManagement</string>
+    <string name="smalldesc">The best way manage your business</string>
+    <string name="desc">Wether you needs to track your employee or simply a small business owner who wants to keep your team more accountable</string>
+</resources>
