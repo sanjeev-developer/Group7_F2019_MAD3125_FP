@@ -56,3 +56,10 @@ public class Dashboard extends BaseActivity implements View.OnClickListener {
                 displaydiag(Dashboard.this, "Are you sure you want to logout?");
 
                 break;
+
+            case R.id.ll_view:
+
+                intent = new Intent(Dashboard.this, EmployeeData.class);
+                startActivity(intent);
+
+                break;
