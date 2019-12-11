@@ -152,3 +152,12 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
     User user;
 
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_add_employee);
+
+        user = new User();
+
+
+
