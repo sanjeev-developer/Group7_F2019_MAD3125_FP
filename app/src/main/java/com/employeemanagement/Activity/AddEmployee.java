@@ -174,4 +174,10 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
         profile_image_signup.setOnClickListener(this);
         imageCompressionLikeWhatsapp = new ImageCompressionLikeWhatsapp(AddEmployee.this)
 
+        spinnerAdapter = new TypeAdapter(AddEmployee.this, specdata, 0);
+        sp_ae.setAdapter(spinnerAdapter);
+        //signup_type_sp.setOnItemSelectedListener(this);
+        apiInterface = ApiClient.getRetrofit().create(ApiInterface.class);
+    }
+
 
