@@ -67,3 +67,13 @@ public class AddVehicle extends BaseActivity implements View.OnClickListener {
     ArrayList<String> modeldata = new ArrayList<>();
     ArrayList<String> yeardata = new ArrayList<>();
     SpinnerAdapter spinnerAdapter;
+
+
+    int position = 0;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_add_vehicle);
+
+        ButterKnife.bind(this);
