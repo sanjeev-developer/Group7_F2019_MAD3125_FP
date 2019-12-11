@@ -30,6 +30,7 @@ class BaseActivity extends AppCompatActivity {
     Dialog dialog;
     Intent intent;
     Dialog Alert;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,17 +38,17 @@ class BaseActivity extends AppCompatActivity {
 
 
     // To animate view slide out from left to right
-    public void slide_To_Right_invisible(View view){
-        TranslateAnimation animate = new TranslateAnimation(0,view.getWidth(),0,0);
+    public void slide_To_Right_invisible(View view) {
+        TranslateAnimation animate = new TranslateAnimation(0, view.getWidth(), 0, 0);
         animate.setDuration(300);
         animate.setFillAfter(true);
         view.startAnimation(animate);
         view.setVisibility(View.GONE);
     }
 
-    public void slide_To_right_visible(View view){
+    public void slide_To_right_visible(View view) {
         view.setVisibility(View.VISIBLE);
-        TranslateAnimation animate = new TranslateAnimation(-view.getWidth(),0,0,0);
+        TranslateAnimation animate = new TranslateAnimation(-view.getWidth(), 0, 0, 0);
         animate.setDuration(500);
         animate.setFillAfter(true);
         view.startAnimation(animate);
@@ -56,9 +57,9 @@ class BaseActivity extends AppCompatActivity {
 
 
     // To animate view slide out from left to right
-    public void slide_To_left_visible(View view){
+    public void slide_To_left_visible(View view) {
         view.setVisibility(View.VISIBLE);
-        TranslateAnimation animate = new TranslateAnimation(view.getWidth(),0,0,0);
+        TranslateAnimation animate = new TranslateAnimation(view.getWidth(), 0, 0, 0);
         animate.setDuration(500);
         animate.setFillAfter(true);
         view.startAnimation(animate);
@@ -67,8 +68,8 @@ class BaseActivity extends AppCompatActivity {
 
     //Right to Left
     // To animate view slide out from right to left
-    public void slide_To_Left_invisible(View view){
-        TranslateAnimation animate = new TranslateAnimation(0,-view.getWidth(),0,0);
+    public void slide_To_Left_invisible(View view) {
+        TranslateAnimation animate = new TranslateAnimation(0, -view.getWidth(), 0, 0);
         animate.setDuration(500);
         animate.setFillAfter(true);
         view.startAnimation(animate);
@@ -77,24 +78,25 @@ class BaseActivity extends AppCompatActivity {
 
     //Top to Bottom
     // To animate view slide out from top to bottom
-    public void slideToBottom(View view){
-        TranslateAnimation animate = new TranslateAnimation(0,0,0,view.getHeight());
-        animate.setDuration(500);
-        animate.setFillAfter(true);
-        view.startAnimation(animate);
-        view.setVisibility(View.GONE);
-    }
-    //Bottom to Top
-    // To animate view slide out from bottom to top
-    public void slideToTop(View view){
-        TranslateAnimation animate = new TranslateAnimation(0,0,0,-view.getHeight());
+    public void slideToBottom(View view) {
+        TranslateAnimation animate = new TranslateAnimation(0, 0, 0, view.getHeight());
         animate.setDuration(500);
         animate.setFillAfter(true);
         view.startAnimation(animate);
         view.setVisibility(View.GONE);
     }
 
-    public  void displayAlert(Context mContext, String strMessage) {
+    //Bottom to Top
+    // To animate view slide out from bottom to top
+    public void slideToTop(View view) {
+        TranslateAnimation animate = new TranslateAnimation(0, 0, 0, -view.getHeight());
+        animate.setDuration(500);
+        animate.setFillAfter(true);
+        view.startAnimation(animate);
+        view.setVisibility(View.GONE);
+    }
+
+    public void displayAlert(Context mContext, String strMessage) {
         //dialog intialization
         dialog = new Dialog(mContext);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -103,20 +105,19 @@ class BaseActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.alert_diag);
 
         LinearLayout okplaced = (LinearLayout) dialog.findViewById(R.id.ll_alert_ok);
-        TextView alertext= (TextView) dialog.findViewById(R.id.text_alert);
+        TextView alertext = (TextView) dialog.findViewById(R.id.text_alert);
         alertext.setText(strMessage);
 
         okplaced.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 dialog.cancel();
             }
         });
         dialog.show();
     }
 
-    public  void displaydialog( String strMessage) {
+    public void displaydialog(String strMessage) {
 
         dialog = new Dialog(BaseActivity.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -125,14 +126,13 @@ class BaseActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.delete_chat_layout);
         dialog.setCancelable(true);
 
-        TextView message= dialog.findViewById(R.id.txt_loading);
+        TextView message = dialog.findViewById(R.id.txt_loading);
         message.setText(strMessage);
 
         dialog.show();
     }
 
-    public void hidekeyboard()
-    {
+    public void hidekeyboard() {
         try {
             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
@@ -145,7 +145,7 @@ class BaseActivity extends AppCompatActivity {
         Snackbar.make(ll_splash, msg, Snackbar.LENGTH_SHORT).show();
     }
 
-    public  void displaydiag(Context context, String message) {
+    public void displaydiag(Context context, String message) {
 
         //dialog intialization
         Alert = new Dialog(context);
@@ -159,22 +159,22 @@ class BaseActivity extends AppCompatActivity {
 
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 Alert.cancel();
             }
         });
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 Intent intent = new Intent(context, MainActivity.class);
                 startActivity(intent);
             }
         });
         Alert.show();
     }
+
+}
 
 
 
