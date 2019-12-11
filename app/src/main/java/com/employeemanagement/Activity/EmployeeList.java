@@ -29,3 +29,11 @@ public class EmployeeList extends BaseActivity implements View.OnClickListener {
         ButterKnife.bind(this);
         img_back_el.setOnClickListener(this);
         recyclerView = findViewById(R.id.rec_dash);
+
+        dashAdapter = new DashAdapter(EmployeeList.this, MainActivity.emparray, getIntent().getStringExtra("decision"));
+        layoutManager = new LinearLayoutManager(EmployeeList.this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(dashAdapter);
+    }
