@@ -70,3 +70,12 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.sp_ae)
     Spinner sp_ae;
+
+    @BindView(R.id.profile_image_signup)
+    ImageView profile_image_signup;
+
+    @BindView(R.id.ll_ae_type)
+    LinearLayout ll_ae_type;
+
+    @BindView(R.id.ll_Intern)
+    LinearLayout ll_Intern;
