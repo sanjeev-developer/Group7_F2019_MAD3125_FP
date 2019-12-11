@@ -25,3 +25,16 @@ public class Dashboard extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.ll_deleteemp)
     LinearLayout ll_deleteemp;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_dashboard);
+
+        ButterKnife.bind(this);
+        ll_addemp.setOnClickListener(this);
+        ll_view.setOnClickListener(this);
+        ll_logout.setOnClickListener(this);
+        ll_addveh.setOnClickListener(this);
+        ll_deleteemp.setOnClickListener(this);
+    }
