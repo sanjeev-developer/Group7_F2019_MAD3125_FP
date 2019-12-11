@@ -68,7 +68,6 @@ public class AddVehicle extends BaseActivity implements View.OnClickListener {
     ArrayList<String> yeardata = new ArrayList<>();
     SpinnerAdapter spinnerAdapter;
 
-
     int position = 0;
 
     @Override
@@ -128,6 +127,7 @@ public class AddVehicle extends BaseActivity implements View.OnClickListener {
         spinnerAdapter = new TypeAdapter(AddVehicle.this, yeardata, 3);
         sp_year.setAdapter(spinnerAdapter);
 
+
         if(getIntent().getIntExtra("option",0) == 2)
         {
             txt_company.setText(MainActivity.emparray.get(position).getVehobj().get(getIntent().getIntExtra("vposition",0)).getCompany());
@@ -174,6 +174,7 @@ public class AddVehicle extends BaseActivity implements View.OnClickListener {
 
         }
     }
+
 
     @Override
     public void onClick(View v)
@@ -310,8 +311,3 @@ public class AddVehicle extends BaseActivity implements View.OnClickListener {
         }
     }
 }
-
-
-
-
-
