@@ -357,6 +357,17 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
         }
     }
 
+    void galleryImageIntent() {
+        Intent intent = null;
+        try {
+            intent = ImagePicker.getPickImageIntent(AddEmployee.this);
+            startActivityForResult(intent, SELECT_IMAGES);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
 
 
