@@ -26,3 +26,12 @@ public class EmployeeDetails extends BaseActivity implements View.OnClickListene
 
     @BindView(R.id.txt_dob)
     TextView txt_dob;
+
+    @BindView(R.id.txt_empstatus)
+    TextView txt_empstatus;
+
+    @BindView(R.id.txt_vstatus)
+    TextView txt_vstatus;
+
+    @BindView(R.id.ll_intern)
+    LinearLayout ll_intern;
