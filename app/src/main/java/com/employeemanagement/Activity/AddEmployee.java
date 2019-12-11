@@ -335,6 +335,29 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
         dialog.show();
     }
 
+    // for high quality image
+    public void launchCameraForImage() throws IOException {
+        try {
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            photoFile = getPhotoFileUri();
+            mediaUri = FileProvider.getUriForFile(AddEmployee.this, "com.employeemanagement.provider", photoFile);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, mediaUri);
+
+            if (intent.resolveActivity(AddEmployee.this.getPackageManager()) != null) {
+                startActivityForResult(intent, REQUEST_CAMERA);
+            }
+
+        } catch (Exception e) {
+
+            try {
+                Log.e("launchCameraForImage: ", e.getMessage());
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        }
+    }
+
+
 
 
 
