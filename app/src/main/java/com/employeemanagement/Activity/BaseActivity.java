@@ -44,3 +44,13 @@ class BaseActivity extends AppCompatActivity {
         view.startAnimation(animate);
         view.setVisibility(View.GONE);
     }
+
+    public void slide_To_right_visible(View view){
+        view.setVisibility(View.VISIBLE);
+        TranslateAnimation animate = new TranslateAnimation(-view.getWidth(),0,0,0);
+        animate.setDuration(500);
+        animate.setFillAfter(true);
+        view.startAnimation(animate);
+        // view.setVisibility(View.VISIBLE);
+    }
+
