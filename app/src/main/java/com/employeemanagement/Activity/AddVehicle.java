@@ -249,6 +249,69 @@ public class AddVehicle extends BaseActivity implements View.OnClickListener {
         }
     }
 
+    public void setdata(String s, int i,int position) {
+
+        if(i==1)
+        {
+            txt_company.setText(s);
+
+            if("Honda" == companydata.get(position))
+            {
+                img_Company.setBackgroundResource(R.drawable.honda);
+            }
+            else if (companydata.get(position) == "Chervolet")
+            {
+                img_Company.setBackgroundResource(R.drawable.cheve);
+            }
+            else if (companydata.get(position) == "BMW")
+            {
+                img_Company.setBackgroundResource(R.drawable.bmw);
+            }
+            else if (companydata.get(position) == "Mercedes")
+            {
+                img_Company.setBackgroundResource(R.drawable.mercedes);
+            }
+            else if (companydata.get(position) == "Landrover")
+            {
+                img_Company.setBackgroundResource(R.drawable.landrover);
+            }
+            else if (companydata.get(position) == "Bajaj")
+            {
+                img_Company.setBackgroundResource(R.drawable.chetak);
+            }
+            else if (companydata.get(position) == "Ford")
+            {
+                img_Company.setBackgroundResource(R.drawable.ford);
+            }
+            else if (companydata.get(position) == "Suzuki")
+            {
+                img_Company.setBackgroundResource(R.drawable.suzuki);
+            }
+            else if (companydata.get(position) == "Audi")
+            {
+                img_Company.setBackgroundResource(R.drawable.audi);
+            }
+
+            spinnerAdapter = new TypeAdapter(AddVehicle.this, companydata, 1);
+            sp_company.setAdapter(spinnerAdapter);
+        }
+        else if (i==2)
+        {
+            txt_model.setText(s);
+            spinnerAdapter = new TypeAdapter(AddVehicle.this, modeldata, 2);
+            sp_model.setAdapter(spinnerAdapter);
+
+        }
+        else if(i==3)
+        {
+            txt_year.setText(s);
+            spinnerAdapter = new TypeAdapter(AddVehicle.this, yeardata, 3);
+            sp_year.setAdapter(spinnerAdapter);
+        }
+    }
+}
+
+
 
 
 
