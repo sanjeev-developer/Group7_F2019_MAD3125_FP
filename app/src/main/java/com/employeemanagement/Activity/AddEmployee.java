@@ -232,3 +232,7 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
                 empobj.setHourWorked(edt_hourworked_ptc.getText().toString());
                 empobj.setCommissionpercent(edt_cp_ptc.getText().toString());
             }
+
+            MainActivity.emparray.add(empobj);
+
+            Toast.makeText(AddEmployee.this,"Successfully added employee", Toast.LENGTH_SHORT).show();
