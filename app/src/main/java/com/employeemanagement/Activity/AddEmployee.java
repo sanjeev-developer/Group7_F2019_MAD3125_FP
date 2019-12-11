@@ -263,3 +263,15 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
 
                 break;
 
+            case R.id.ll_ae_type:
+
+                try {
+                    InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                sp_ae.performClick();
+
+                break;
+
