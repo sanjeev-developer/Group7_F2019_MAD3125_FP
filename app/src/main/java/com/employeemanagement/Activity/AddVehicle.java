@@ -21,3 +21,49 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+public class AddVehicle extends BaseActivity implements View.OnClickListener {
+
+    @BindView(R.id.img_back_addveh)
+    ImageView img_back_addveh;
+
+    @BindView(R.id.img_Company)
+    ImageView img_Company;
+
+    @BindView(R.id.txt_company)
+    TextView txt_company;
+
+    @BindView(R.id.sp_company)
+    Spinner sp_company;
+
+    @BindView(R.id.ll_company)
+    LinearLayout ll_company;
+
+    @BindView(R.id.ll_model)
+    LinearLayout ll_model;
+
+    @BindView(R.id.txt_model)
+    TextView txt_model;
+
+    @BindView(R.id.sp_model)
+    Spinner sp_model;
+
+    @BindView(R.id.ll_year)
+    LinearLayout ll_year;
+
+    @BindView(R.id.txt_year)
+    TextView txt_year;
+
+    @BindView(R.id.sp_year)
+    Spinner sp_year;
+
+    @BindView(R.id.edt_plateno)
+    EditText edt_plateno;
+
+    @BindView(R.id.but_add)
+    Button but_add;
+
+    ArrayList<String> companydata = new ArrayList<>();
+    ArrayList<String> modeldata = new ArrayList<>();
+    ArrayList<String> yeardata = new ArrayList<>();
+    SpinnerAdapter spinnerAdapter;
