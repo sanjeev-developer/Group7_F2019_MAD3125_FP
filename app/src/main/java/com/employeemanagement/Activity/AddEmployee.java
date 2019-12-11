@@ -316,5 +316,25 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
             }
         });
 
+        gallery_choose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                galleryImageIntent();
+                dialog.dismiss();
+            }
+        });
+
+
+        cross.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+
 
 
