@@ -79,3 +79,12 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.ll_Intern)
     LinearLayout ll_Intern;
+
+    @BindView(R.id.ll_Pfa)
+    LinearLayout ll_Pfa;
+
+    @BindView(R.id.ll_Ptc)
+    LinearLayout ll_Ptc;
+
+    @BindView(R.id.ll_fulltime)
+    LinearLayout ll_fulltime;
