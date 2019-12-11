@@ -42,4 +42,5 @@ class BaseActivity extends AppCompatActivity {
         animate.setDuration(300);
         animate.setFillAfter(true);
         view.startAnimation(animate);
-        vi
+        view.setVisibility(View.GONE);
+    }
