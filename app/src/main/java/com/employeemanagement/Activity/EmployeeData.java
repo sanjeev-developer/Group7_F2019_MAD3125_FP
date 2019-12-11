@@ -46,3 +46,7 @@ public class EmployeeData extends BaseActivity implements View.OnClickListener {
                 count++;
             }
         }
+
+
+        txt_nov_ed.setText(""+count);
+    }
