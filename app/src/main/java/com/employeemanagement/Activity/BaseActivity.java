@@ -24,3 +24,13 @@ import com.employeemanagement.Utils.EmployeeData;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
+
+class BaseActivity extends AppCompatActivity {
+
+    Dialog dialog;
+    Intent intent;
+    Dialog Alert;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
