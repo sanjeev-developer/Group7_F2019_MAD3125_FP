@@ -50,3 +50,15 @@ public class AddVehicle extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.ll_year)
     LinearLayout ll_year;
+
+    @BindView(R.id.txt_year)
+    TextView txt_year;
+
+    @BindView(R.id.sp_year)
+    Spinner sp_year;
+
+    @BindView(R.id.edt_plateno)
+    EditText edt_plateno;
+
+    @BindView(R.id.but_add)
+    Button but_add;
