@@ -159,5 +159,11 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
 
         user = new User();
 
+        specdata.add("Intern");
+        specdata.add("FullTime");
+        specdata.add("Part time Fixed");
+        specdata.add("Part time commisioned");
+
+        ButterKnife.bind(this);
 
 
