@@ -290,4 +290,31 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
         }
     }
 
+    public void showchooser() {
+        //dialog intialization
+        dialog = new Dialog(AddEmployee.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        AddEmployee.this.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.setContentView(R.layout.choose);
+        dialog.setCancelable(false);
+
+        LinearLayout camera_choose = (LinearLayout) dialog.findViewById(R.id.camera_picker);
+        LinearLayout gallery_choose = (LinearLayout) dialog.findViewById(R.id.gallery_picker);
+        ImageView cross = (ImageView) dialog.findViewById(R.id.cross_dialog_gallery);
+
+        camera_choose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("CAMERA >>>>>> ");
+                try {
+                    launchCameraForImage();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                dialog.dismiss();
+            }
+        });
+
+
 
