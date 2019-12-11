@@ -138,4 +138,17 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
     ImageCompressionLikeWhatsapp imageCompressionLikeWhatsapp;
     String compressed_real_path;
 
+    ArrayList<String> specdata = new ArrayList<>();
+    private AppDatabase mDb;
+    Handler handler;
+    static final int DATE_DIALOG_ID = 999;
+    private String dob = "";
+    private String monthname;
+    private int myear;
+    private int mmonth;
+    private int mday;
+    public Calendar c;
+    TypeAdapter spinnerAdapter;
+    User user;
+
 
