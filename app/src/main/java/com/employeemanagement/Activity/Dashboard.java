@@ -13,3 +13,12 @@ public class Dashboard extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.ll_addemp)
     LinearLayout ll_addemp;
+
+    @BindView(R.id.ll_view)
+    LinearLayout ll_view;
+
+    @BindView(R.id.ll_logout)
+    LinearLayout ll_logout;
+
+    @BindView(R.id.ll_addveh)
+    LinearLayout ll_addveh;
