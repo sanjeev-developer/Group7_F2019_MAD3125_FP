@@ -43,3 +43,8 @@ public class EmployeeList extends BaseActivity implements View.OnClickListener {
         intent = new Intent(EmployeeList.this, Dashboard.class);
         startActivity(intent);
     }
+    public void deletedata(int position) {
+
+
+    }
+}
