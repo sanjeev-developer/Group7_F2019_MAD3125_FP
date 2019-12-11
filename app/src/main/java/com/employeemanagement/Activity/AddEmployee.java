@@ -242,3 +242,24 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
             startActivity(intent);
         }
     }
+
+    @Override
+    public void onClick(View view) {
+
+        switch (view.getId()) {
+
+            case R.id.img_signup_back:
+
+                intent = new Intent(AddEmployee.this, Dashboard.class);
+                startActivity(intent);
+
+                break;
+
+
+            case R.id.edt_ae_dob:
+
+                hidekeyboard();
+                showDialog(DATE_DIALOG_ID);
+
+                break;
+
