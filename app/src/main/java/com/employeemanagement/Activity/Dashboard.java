@@ -38,3 +38,21 @@ public class Dashboard extends BaseActivity implements View.OnClickListener {
         ll_addveh.setOnClickListener(this);
         ll_deleteemp.setOnClickListener(this);
     }
+
+    @Override
+    public void onClick(View view) {
+
+        switch (view.getId()) {
+
+            case R.id.ll_addemp:
+
+                intent = new Intent(Dashboard.this, AddEmployee.class);
+                startActivity(intent);
+
+                break;
+
+            case R.id.ll_logout:
+
+                displaydiag(Dashboard.this, "Are you sure you want to logout?");
+
+                break;
