@@ -154,6 +154,9 @@ class BaseActivity extends AppCompatActivity {
         Alert.getWindow().setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(context, R.color.transparent)));
         Alert.setContentView(R.layout.logout_layout);
 
+        LinearLayout ok = (LinearLayout) Alert.findViewById(R.id.ll_alert_ok);
+        LinearLayout logout = (LinearLayout) Alert.findViewById(R.id.ll_alert_logout);
+
 
 
 
