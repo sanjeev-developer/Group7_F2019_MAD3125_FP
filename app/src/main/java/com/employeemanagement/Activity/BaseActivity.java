@@ -128,5 +128,8 @@ class BaseActivity extends AppCompatActivity {
         TextView message= dialog.findViewById(R.id.txt_loading);
         message.setText(strMessage);
 
+        dialog.show();
+    }
+
 
 
