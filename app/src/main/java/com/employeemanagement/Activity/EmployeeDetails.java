@@ -80,3 +80,9 @@ public class EmployeeDetails extends BaseActivity implements View.OnClickListene
 
     @BindView(R.id.rec_empdetails)
     RecyclerView rec_empdetails;
+
+    @BindView(R.id.img_back_ed)
+    ImageView img_back_ed;
+
+    VehAdapter vehAdapter;
+    LinearLayoutManager layoutManager;
