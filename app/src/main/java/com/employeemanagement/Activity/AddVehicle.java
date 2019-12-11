@@ -95,3 +95,18 @@ public class AddVehicle extends BaseActivity implements View.OnClickListener {
         modeldata.add("xdvt");
         modeldata.add("Magnum-turbo");
         modeldata.add("elegant");
+
+        yeardata.add("2004");
+        yeardata.add("2005");
+        yeardata.add("2005");
+        yeardata.add("2006");
+        yeardata.add("2007");
+        yeardata.add("2008");
+        yeardata.add("2009");
+        yeardata.add("2010");
+        yeardata.add("2011");
+        yeardata.add("2012");
+        yeardata.add("2013");
+        yeardata.add("2014");
+        yeardata.add("2015");
+        yeardata.add("2016");
