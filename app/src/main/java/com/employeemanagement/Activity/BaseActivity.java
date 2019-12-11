@@ -116,5 +116,17 @@ class BaseActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    public  void displaydialog( String strMessage) {
+
+        dialog = new Dialog(BaseActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(BaseActivity.this, R.color.transparent)));
+        dialog.setContentView(R.layout.delete_chat_layout);
+        dialog.setCancelable(true);
+
+        TextView message= dialog.findViewById(R.id.txt_loading);
+        message.setText(strMessage);
+
 
 
