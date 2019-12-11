@@ -118,3 +118,12 @@ public class AddVehicle extends BaseActivity implements View.OnClickListener {
         ll_year.setOnClickListener(this);
 
         position = getIntent().getIntExtra("position",0);
+
+        spinnerAdapter = new TypeAdapter(AddVehicle.this, companydata, 1);
+        sp_company.setAdapter(spinnerAdapter);
+
+        spinnerAdapter = new TypeAdapter(AddVehicle.this, modeldata, 2);
+        sp_model.setAdapter(spinnerAdapter);
+
+        spinnerAdapter = new TypeAdapter(AddVehicle.this, yeardata, 3);
+        sp_year.setAdapter(spinnerAdapter);
