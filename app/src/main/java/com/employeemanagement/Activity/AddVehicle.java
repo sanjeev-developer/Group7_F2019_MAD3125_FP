@@ -77,3 +77,12 @@ public class AddVehicle extends BaseActivity implements View.OnClickListener {
         setContentView(R.layout.activity_add_vehicle);
 
         ButterKnife.bind(this);
+
+        companydata.add("Honda");
+        companydata.add("Chervolet");
+        companydata.add("BMW");
+        companydata.add("Mercedes");
+        companydata.add("Landrover");
+        companydata.add("Bajaj");
+        companydata.add("Ford");
+        companydata.add("Audi");
