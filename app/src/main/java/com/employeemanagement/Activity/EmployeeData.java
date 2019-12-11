@@ -50,3 +50,15 @@ public class EmployeeData extends BaseActivity implements View.OnClickListener {
 
         txt_nov_ed.setText(""+count);
     }
+    @Override
+    public void onClick(View v) {
+
+
+        switch (v.getId()) {
+
+            case R.id.img_back_edata:
+
+                intent = new Intent(EmployeeData.this, Dashboard.class);
+                startActivity(intent);
+
+                break;
