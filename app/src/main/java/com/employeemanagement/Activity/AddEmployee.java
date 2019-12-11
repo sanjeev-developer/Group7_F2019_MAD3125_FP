@@ -58,3 +58,15 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.edt_ae_fullname)
     EditText edt_ae_fullname;
+
+    @BindView(R.id.et_ae_phoneno)
+    EditText et_ae_phoneno;
+
+    @BindView(R.id.edt_ae_dob)
+    TextView edt_ae_dob;
+
+    @BindView(R.id.edt_ae_email)
+    EditText edt_ae_email;
+
+    @BindView(R.id.sp_ae)
+    Spinner sp_ae;
