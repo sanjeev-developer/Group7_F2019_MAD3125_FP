@@ -100,3 +100,25 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.edt_rate_pfa)
     EditText edt_rate_pfa;
+
+    @BindView(R.id.edt_hourworked_pfa)
+    EditText edt_hourworked_pfa;
+
+    @BindView(R.id.edt_fixedamount_pfa)
+    EditText edt_fixedamount_pfa;
+
+    @BindView(R.id.edt_rate_ptc)
+    EditText edt_rate_ptc;
+
+    @BindView(R.id.edt_hourworked_ptc)
+    EditText edt_hourworked_ptc;
+
+    @BindView(R.id.edt_cp_ptc)
+    EditText edt_cp_ptc;
+
+    @BindView(R.id.edt_salary_ft)
+    EditText edt_salary_ft;
+
+    @BindView(R.id.edt_hourworked_ft)
+    EditText edt_hourworked_ft;
+
