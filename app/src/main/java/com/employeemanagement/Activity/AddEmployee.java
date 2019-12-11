@@ -368,6 +368,29 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
     }
 
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == android.app.Activity.RESULT_OK) {
+            if (requestCode == SELECT_IMAGES) {
+                if (data != null && data.getData() != null) {
+                    imageUri = data.getData();
+                    realPth = getRealPathFromURI(imageUri);
+                    profile_image_signup.setImageURI(imageUri);
+                    compressed_real_path = imageCompressionLikeWhatsapp.compressImage(realPth);
+                    image_b = true;
+                }
+            } else if (requestCode == REQUEST_CAMERA) {
+                realPth = photoFile.getPath();
+                imageUri = Uri.parse(realPth);
+                compressed_real_path = imageCompressionLikeWhatsapp.compressImage(realPth);
+                profile_image_signup.setImageURI(imageUri);
+                image_b = true;
+            }
+        }
+    }
+
+
 
 
 
