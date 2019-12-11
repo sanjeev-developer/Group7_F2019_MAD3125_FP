@@ -71,3 +71,16 @@ public class Dashboard extends BaseActivity implements View.OnClickListener {
                 startActivity(intent);
 
                 break;
+
+
+            case R.id.ll_deleteemp:
+
+                intent = new Intent(Dashboard.this, EmployeeList.class);
+                intent.putExtra("decision","deleteemp");
+                startActivity(intent);
+
+                break;
+        }
+    }
+}
+
