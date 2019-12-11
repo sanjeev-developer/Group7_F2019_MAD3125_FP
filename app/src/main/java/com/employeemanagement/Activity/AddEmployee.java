@@ -402,6 +402,209 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
         return path;
     }
 
+    public File getPhotoFileUri() {
+        // Get safe storage directory for photos
+        // Use `getExternalFilesDir` on Context to access package-specific directories.
+        // This way, we don't need to request external read/write runtime permissions.
+        File mediaStorageDir = new File(AddEmployee.this.getExternalFilesDir(Environment.DIRECTORY_PICTURES), "Employee");
+
+        // Create the storage directory if it does not exist
+        if (!mediaStorageDir.exists() && !mediaStorageDir.mkdirs()) {
+            Log.e(TAG, "failed to create directory");
+        }
+
+        // Return the file target for the photo based on filename
+        File file = new File(mediaStorageDir.getPath() + File.separator + System.currentTimeMillis() + ".jpg");
+
+        return file;
+    }
+
+    public static boolean isValidEmail(String st_email) {
+        if (st_email == null) {
+            return false;
+        } else {
+            return Patterns.EMAIL_ADDRESS.matcher(st_email).matches();
+        }
+    }
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        switch (id) {
+            case DATE_DIALOG_ID:
+                // set date picker as current date
+
+                setCurrentDateOnView();
+
+                DatePickerDialog _date = new DatePickerDialog(this, datePickerListener, myear, mmonth, mday) {
+                    @Override
+                    public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                        Calendar cal = Calendar.getInstance();
+                        cal.add(Calendar.YEAR, -3);
+                        System.out.println("Date = " + cal.getTime());
+
+                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                        Date date1 = null;
+
+                        try {
+                            date1 = sdf.parse("" + year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+                        } catch (java.text.ParseException e) {
+                            e.printStackTrace();
+                        }
+
+                        if (year > myear) {
+                            view.updateDate(myear, mmonth, mday);
+                            Toast.makeText(getApplicationContext(), "Choose a valid date", Toast.LENGTH_LONG).show();
+                        }
+
+                        if (monthOfYear > mmonth && year == myear) {
+                            view.updateDate(myear, mmonth, mday);
+                            Toast.makeText(getApplicationContext(), "Choose a valid date", Toast.LENGTH_LONG).show();
+                        }
+
+                        if (dayOfMonth > mday && year == myear && monthOfYear == mmonth) {
+                            view.updateDate(myear, mmonth, mday);
+                            Toast.makeText(getApplicationContext(), "Choose a valid date", Toast.LENGTH_LONG).show();
+                        }
+
+                        if (date1.after(cal.getTime())) {
+                            System.out.println("Date1 is after Date2");
+                            view.updateDate(myear, mmonth, mday);
+                            Toast.makeText(getApplicationContext(), "Choose a valid date", Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                };
+
+                _date.show();
+        }
+        return null;
+    }
+
+    private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
+
+        // when dialog box is closed, below method will be called.
+        public void onDateSet(DatePicker view, int selectedYear, int selectedMonth, int selectedDay) {
+            myear = selectedYear;
+            mmonth = selectedMonth;
+            mday = selectedDay;
+
+            switch (mmonth + 1) {
+                case 1:
+                    monthname = "Jan";
+
+                    break;
+
+                case 2:
+                    monthname = "Feb";
+
+                    break;
+
+                case 3:
+                    monthname = "Mar";
+
+                    break;
+
+                case 4:
+                    monthname = "Apr";
+
+                    break;
+
+                case 5:
+                    monthname = "May";
+
+                    break;
+
+                case 6:
+                    monthname = "Jun";
+
+                    break;
+
+                case 7:
+                    monthname = "Jul";
+
+                    break;
+
+                case 8:
+                    monthname = "Aug";
+
+                    break;
+
+                case 9:
+                    monthname = "Sep";
+                    break;
+
+                case 10:
+                    monthname = "Oct";
+                    break;
+
+                case 11:
+                    monthname = "Nov";
+                    break;
+
+                case 12:
+                    monthname = "Dec";
+
+                    break;
+            }
+            dob = monthname + " " + mday + ", " + myear;
+            edt_ae_dob.setText(dob);
+        }
+    };
+
+    public void setCurrentDateOnView() {
+        try {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        c = Calendar.getInstance();
+        c.add(Calendar.YEAR, -3);
+        myear = c.get(c.YEAR);
+        mmonth = c.get(c.MONTH);
+        mday = c.get(c.DAY_OF_MONTH);
+    }
+
+    public void setdata(String s) {
+
+        txt_ae_type.setText(s);
+        //signup_type_sp.performClick();
+
+        if(s.equals("Intern"))
+        {
+            ll_Intern.setVisibility(View.VISIBLE);
+            ll_Pfa.setVisibility(View.GONE);
+            ll_Ptc.setVisibility(View.GONE);
+            ll_fulltime.setVisibility(View.GONE);
+        }
+        else if(s.equals("FullTime"))
+        {
+            ll_Intern.setVisibility(View.GONE);
+            ll_Pfa.setVisibility(View.GONE);
+            ll_Ptc.setVisibility(View.GONE);
+            ll_fulltime.setVisibility(View.VISIBLE);
+        }
+        else if(s.equals("Part time Fixed"))
+        {
+            ll_Intern.setVisibility(View.GONE);
+            ll_Pfa.setVisibility(View.VISIBLE);
+            ll_Ptc.setVisibility(View.GONE);
+            ll_fulltime.setVisibility(View.GONE);
+        }
+        else if(s.equals("Part time commisioned"))
+        {
+            ll_Intern.setVisibility(View.GONE);
+            ll_Pfa.setVisibility(View.GONE);
+            ll_Ptc.setVisibility(View.VISIBLE);
+            ll_fulltime.setVisibility(View.GONE);
+        }
+
+        sp_ae.setAdapter(spinnerAdapter);
+    }
+}
+
 
 
 
