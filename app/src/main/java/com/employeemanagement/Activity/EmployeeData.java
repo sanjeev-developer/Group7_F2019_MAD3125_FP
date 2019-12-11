@@ -47,9 +47,9 @@ public class EmployeeData extends BaseActivity implements View.OnClickListener {
             }
         }
 
-
         txt_nov_ed.setText(""+count);
     }
+
     @Override
     public void onClick(View v) {
 
@@ -62,6 +62,7 @@ public class EmployeeData extends BaseActivity implements View.OnClickListener {
                 startActivity(intent);
 
                 break;
+
 
             case R.id.card_vae_ed:
 
