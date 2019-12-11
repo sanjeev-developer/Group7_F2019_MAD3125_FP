@@ -236,3 +236,9 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
             MainActivity.emparray.add(empobj);
 
             Toast.makeText(AddEmployee.this,"Successfully added employee", Toast.LENGTH_SHORT).show();
+
+
+            intent = new Intent(AddEmployee.this, Dashboard.class);
+            startActivity(intent);
+        }
+    }
