@@ -15,3 +15,14 @@ import android.widget.TextView;
 import com.employeemanagement.Adapters.DashAdapter;
 import com.employeemanagement.Adapters.VehAdapter;
 import com.employeemanagement.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class EmployeeDetails extends BaseActivity implements View.OnClickListener {
+
+    @BindView(R.id.txt_name)
+    TextView txt_name;
+
+    @BindView(R.id.txt_dob)
+    TextView txt_dob;
