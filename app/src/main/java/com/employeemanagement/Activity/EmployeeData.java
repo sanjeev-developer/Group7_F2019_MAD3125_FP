@@ -62,3 +62,14 @@ public class EmployeeData extends BaseActivity implements View.OnClickListener {
                 startActivity(intent);
 
                 break;
+
+            case R.id.card_vae_ed:
+
+                intent = new Intent(EmployeeData.this, EmployeeList.class);
+                intent.putExtra("decision","viewemp");
+                startActivity(intent);
+
+                break;
+        }
+    }
+}
