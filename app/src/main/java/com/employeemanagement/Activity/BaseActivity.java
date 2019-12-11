@@ -94,5 +94,27 @@ class BaseActivity extends AppCompatActivity {
         view.setVisibility(View.GONE);
     }
 
+    public  void displayAlert(Context mContext, String strMessage) {
+        //dialog intialization
+        dialog = new Dialog(mContext);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.setContentView(R.layout.alert_diag);
+
+        LinearLayout okplaced = (LinearLayout) dialog.findViewById(R.id.ll_alert_ok);
+        TextView alertext= (TextView) dialog.findViewById(R.id.text_alert);
+        alertext.setText(strMessage);
+
+        okplaced.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                dialog.cancel();
+            }
+        });
+        dialog.show();
+    }
+
 
 
