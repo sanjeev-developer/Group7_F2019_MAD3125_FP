@@ -110,3 +110,11 @@ public class AddVehicle extends BaseActivity implements View.OnClickListener {
         yeardata.add("2014");
         yeardata.add("2015");
         yeardata.add("2016");
+
+        but_add.setOnClickListener(this);
+        img_back_addveh.setOnClickListener(this);
+        ll_company.setOnClickListener(this);
+        ll_model.setOnClickListener(this);
+        ll_year.setOnClickListener(this);
+
+        position = getIntent().getIntExtra("position",0);
