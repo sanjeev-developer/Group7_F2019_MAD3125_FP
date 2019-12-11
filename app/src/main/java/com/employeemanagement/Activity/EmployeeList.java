@@ -37,3 +37,16 @@ public class EmployeeList extends BaseActivity implements View.OnClickListener {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(dashAdapter);
     }
+
+    @Override
+    public void onClick(View v)
+    {
+        intent = new Intent(EmployeeList.this, Dashboard.class);
+        startActivity(intent);
+    }
+
+    public void deletedata(int position) {
+
+
+    }
+}
