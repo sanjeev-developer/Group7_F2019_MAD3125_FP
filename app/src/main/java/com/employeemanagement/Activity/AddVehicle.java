@@ -62,3 +62,8 @@ public class AddVehicle extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.but_add)
     Button but_add;
+
+    ArrayList<String> companydata = new ArrayList<>();
+    ArrayList<String> modeldata = new ArrayList<>();
+    ArrayList<String> yeardata = new ArrayList<>();
+    SpinnerAdapter spinnerAdapter;
