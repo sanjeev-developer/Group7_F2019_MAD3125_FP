@@ -202,3 +202,10 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
         }  else if (txt_ae_type.getText().toString().equals("Select type")) {
             displayAlert(this, "select type");
         } else
+        {
+            EmployeeData empobj = new EmployeeData();
+            empobj.setEmpname(edt_ae_fullname.getText().toString());
+            empobj.setType(txt_ae_type.getText().toString());
+            empobj.setPhoneno(et_ae_phoneno.getText().toString());
+            empobj.setDateofbirth(edt_ae_dob.getText().toString());
+            empobj.setEmail(edt_ae_email.getText().toString());
