@@ -86,3 +86,21 @@ public class EmployeeDetails extends BaseActivity implements View.OnClickListene
 
     VehAdapter vehAdapter;
     LinearLayoutManager layoutManager;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_employee_details);
+
+        ButterKnife.bind(this);
+        img_back_ed.setOnClickListener(this);
+
+        if(MainActivity.emparray.get(getIntent().getIntExtra("position",0)).getType() == "Intern")
+        {
+
+        }
+        else if(MainActivity.emparray.get(getIntent().getIntExtra("position",0)).getType() == "FullTime")
+        {
+
+        }
