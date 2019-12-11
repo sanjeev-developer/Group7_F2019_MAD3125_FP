@@ -122,3 +122,20 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
     @BindView(R.id.edt_hourworked_ft)
     EditText edt_hourworked_ft;
 
+    ApiInterface apiInterface;
+
+    boolean image_b = false;
+    Intent intent;
+    int REQUEST_CAMERA = 100;
+    int SELECT_IMAGES = 200;
+    Dialog dialog;
+    Uri mediaUri;
+    File photoFile;
+    String realPth = "";
+    Uri imageUri = null;
+    int SignupAs;
+    private static final String TAG = "Employee";
+    ImageCompressionLikeWhatsapp imageCompressionLikeWhatsapp;
+    String compressed_real_path;
+
+
