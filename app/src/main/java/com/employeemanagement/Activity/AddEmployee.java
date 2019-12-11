@@ -151,7 +151,6 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
     TypeAdapter spinnerAdapter;
     User user;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -172,7 +171,7 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
         ll_ae_type.setOnClickListener(this);
         edt_ae_dob.setOnClickListener(this);
         profile_image_signup.setOnClickListener(this);
-        imageCompressionLikeWhatsapp = new ImageCompressionLikeWhatsapp(AddEmployee.this)
+        imageCompressionLikeWhatsapp = new ImageCompressionLikeWhatsapp(AddEmployee.this);
 
         spinnerAdapter = new TypeAdapter(AddEmployee.this, specdata, 0);
         sp_ae.setAdapter(spinnerAdapter);
@@ -180,12 +179,12 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
         apiInterface = ApiClient.getRetrofit().create(ApiInterface.class);
     }
 
-
     public void checkvalidation()
     {
 //        if (!image_b) {
 //            displayAlert(this, "Please upload image");
 //        }else
+
 
         if (edt_ae_fullname.getText().toString().equals("")) {
             displayAlert(this, "Full name can't be blank");
@@ -238,6 +237,7 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
             Toast.makeText(AddEmployee.this,"Successfully added employee", Toast.LENGTH_SHORT).show();
 
 
+
             intent = new Intent(AddEmployee.this, Dashboard.class);
             startActivity(intent);
         }
@@ -263,6 +263,7 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
 
                 break;
 
+
             case R.id.ll_ae_type:
 
                 try {
@@ -274,7 +275,6 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
                 sp_ae.performClick();
 
                 break;
-
 
             case R.id.profile_image_signup:
 
@@ -289,6 +289,7 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
                 break;
         }
     }
+
 
     public void showchooser() {
         //dialog intialization
@@ -367,7 +368,6 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
         }
     }
 
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -418,6 +418,7 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
 
         return file;
     }
+
 
     public static boolean isValidEmail(String st_email) {
         if (st_email == null) {
@@ -604,9 +605,3 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
         sp_ae.setAdapter(spinnerAdapter);
     }
 }
-
-
-
-
-
-
