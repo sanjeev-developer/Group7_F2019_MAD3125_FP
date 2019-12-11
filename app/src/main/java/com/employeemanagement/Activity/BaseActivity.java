@@ -157,6 +157,15 @@ class BaseActivity extends AppCompatActivity {
         LinearLayout ok = (LinearLayout) Alert.findViewById(R.id.ll_alert_ok);
         LinearLayout logout = (LinearLayout) Alert.findViewById(R.id.ll_alert_logout);
 
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Alert.cancel();
+            }
+        });
+
+
 
 
 
