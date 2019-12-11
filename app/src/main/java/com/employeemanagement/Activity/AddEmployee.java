@@ -181,3 +181,8 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
     }
 
 
+    public void checkvalidation()
+    {
+//        if (!image_b) {
+//            displayAlert(this, "Please upload image");
+//        }else
