@@ -145,6 +145,15 @@ class BaseActivity extends AppCompatActivity {
         Snackbar.make(ll_splash, msg, Snackbar.LENGTH_SHORT).show();
     }
 
+    public  void displaydiag(Context context, String message) {
+
+        //dialog intialization
+        Alert = new Dialog(context);
+        Alert.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        Alert.getWindow().setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(context, R.color.transparent)));
+        Alert.setContentView(R.layout.logout_layout);
+
 
 
 
