@@ -11,3 +11,12 @@ import com.employeemanagement.Adapters.DashAdapter;
 import com.employeemanagement.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+public class EmployeeList extends BaseActivity implements View.OnClickListener {
+
+    @BindView(R.id.img_back_el)
+    ImageView img_back_el;
+
+    DashAdapter dashAdapter;
+    RecyclerView recyclerView;
+    LinearLayoutManager layoutManager;
