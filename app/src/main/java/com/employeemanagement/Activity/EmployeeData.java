@@ -26,3 +26,10 @@ public class EmployeeData extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.card_vae_ed)
     CardView card_vae_ed;
+
+    int count = 0;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_employee_data);
