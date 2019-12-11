@@ -20,3 +20,9 @@ public class EmployeeData extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.txt_total_ed)
     TextView txt_total_ed;
+
+    @BindView(R.id.img_back_edata)
+    ImageView img_back_edata;
+
+    @BindView(R.id.card_vae_ed)
+    CardView card_vae_ed;
