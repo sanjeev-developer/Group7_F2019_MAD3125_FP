@@ -390,6 +390,18 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
         }
     }
 
+    public String getRealPathFromURI(Uri contentUri) {
+        String path = null;
+        String[] proj = {MediaStore.MediaColumns.DATA};
+        Cursor cursor = AddEmployee.this.getContentResolver().query(contentUri, proj, null, null, null);
+        if (cursor.moveToFirst()) {
+            int column_index = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA);
+            path = cursor.getString(column_index);
+        }
+        cursor.close();
+        return path;
+    }
+
 
 
 
