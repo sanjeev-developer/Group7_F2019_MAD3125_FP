@@ -112,6 +112,7 @@ public class EmployeeDetails extends BaseActivity implements View.OnClickListene
         {
 
         }
+
         vehAdapter = new VehAdapter(EmployeeDetails.this, MainActivity.emparray, getIntent().getIntExtra("position",0));
         layoutManager = new LinearLayoutManager(EmployeeDetails.this);
         rec_empdetails.setLayoutManager(layoutManager);
@@ -129,4 +130,3 @@ public class EmployeeDetails extends BaseActivity implements View.OnClickListene
 
     }
 }
-
