@@ -20,3 +20,12 @@ public class EmployeeList extends BaseActivity implements View.OnClickListener {
     DashAdapter dashAdapter;
     RecyclerView recyclerView;
     LinearLayoutManager layoutManager;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_employee_list);
+
+        ButterKnife.bind(this);
+        img_back_el.setOnClickListener(this);
+        recyclerView = findViewById(R.id.rec_dash);
