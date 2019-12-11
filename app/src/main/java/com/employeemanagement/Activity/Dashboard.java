@@ -22,3 +22,6 @@ public class Dashboard extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.ll_addveh)
     LinearLayout ll_addveh;
+
+    @BindView(R.id.ll_deleteemp)
+    LinearLayout ll_deleteemp;
