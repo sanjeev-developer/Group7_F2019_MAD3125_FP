@@ -181,3 +181,24 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
     }
 
 
+    public void checkvalidation()
+    {
+//        if (!image_b) {
+//            displayAlert(this, "Please upload image");
+//        }else
+
+        if (edt_ae_fullname.getText().toString().equals("")) {
+            displayAlert(this, "Full name can't be blank");
+        }else if (et_ae_phoneno.getText().toString().equals("")) {
+            displayAlert(this, "Mobile Number can't be blank");
+        } else if ((et_ae_phoneno.getText().length() < 10)) {
+            displayAlert(this, "Mobile Number must be 10 digit");
+        } else if (edt_ae_dob.getText().toString().equals("")) {
+            displayAlert(this, "Select date of birth");
+        } else if (edt_ae_email.getText().toString().equals("")) {
+            displayAlert(this, "Email can't be blank");
+        }else if (!isValidEmail(edt_ae_email.getText().toString())) {
+            displayAlert(this, "Please enter the valid email");
+        }  else if (txt_ae_type.getText().toString().equals("Select type")) {
+            displayAlert(this, "select type");
+        } else
