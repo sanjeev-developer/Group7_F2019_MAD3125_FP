@@ -127,3 +127,51 @@ public class AddVehicle extends BaseActivity implements View.OnClickListener {
 
         spinnerAdapter = new TypeAdapter(AddVehicle.this, yeardata, 3);
         sp_year.setAdapter(spinnerAdapter);
+
+        if(getIntent().getIntExtra("option",0) == 2)
+        {
+            txt_company.setText(MainActivity.emparray.get(position).getVehobj().get(getIntent().getIntExtra("vposition",0)).getCompany());
+            txt_model.setText(MainActivity.emparray.get(position).getVehobj().get(getIntent().getIntExtra("vposition",0)).getModel());
+            txt_year.setText(MainActivity.emparray.get(position).getVehobj().get(getIntent().getIntExtra("vposition",0)).getYear());
+            edt_plateno.setText(MainActivity.emparray.get(position).getVehobj().get(getIntent().getIntExtra("vposition",0)).getPlate());
+
+            if("Honda" == MainActivity.emparray.get(position).getVehobj().get(getIntent().getIntExtra("vposition",0)).getCompany())
+            {
+                img_Company.setBackgroundResource(R.drawable.honda);
+            }
+            else if (MainActivity.emparray.get(position).getVehobj().get(getIntent().getIntExtra("vposition",0)).getCompany() == "Chervolet")
+            {
+                img_Company.setBackgroundResource(R.drawable.cheve);
+            }
+            else if (MainActivity.emparray.get(position).getVehobj().get(getIntent().getIntExtra("vposition",0)).getCompany() == "BMW")
+            {
+                img_Company.setBackgroundResource(R.drawable.bmw);
+            }
+            else if (MainActivity.emparray.get(position).getVehobj().get(getIntent().getIntExtra("vposition",0)).getCompany() == "Mercedes")
+            {
+                img_Company.setBackgroundResource(R.drawable.mercedes);
+            }
+            else if (MainActivity.emparray.get(position).getVehobj().get(getIntent().getIntExtra("vposition",0)).getCompany() == "Landrover")
+            {
+                img_Company.setBackgroundResource(R.drawable.landrover);
+            }
+            else if (MainActivity.emparray.get(position).getVehobj().get(getIntent().getIntExtra("vposition",0)).getCompany() == "Bajaj")
+            {
+                img_Company.setBackgroundResource(R.drawable.chetak);
+            }
+            else if (MainActivity.emparray.get(position).getVehobj().get(getIntent().getIntExtra("vposition",0)).getCompany() == "Ford")
+            {
+                img_Company.setBackgroundResource(R.drawable.ford);
+            }
+            else if (MainActivity.emparray.get(position).getVehobj().get(getIntent().getIntExtra("vposition",0)).getCompany() == "Suzuki")
+            {
+                img_Company.setBackgroundResource(R.drawable.suzuki);
+            }
+            else if (MainActivity.emparray.get(position).getVehobj().get(getIntent().getIntExtra("vposition",0)).getCompany() == "Audi")
+            {
+                img_Company.setBackgroundResource(R.drawable.audi);
+            }
+
+        }
+    }
+
