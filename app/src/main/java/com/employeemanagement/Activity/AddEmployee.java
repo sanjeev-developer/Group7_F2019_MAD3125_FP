@@ -275,3 +275,19 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
 
                 break;
 
+
+            case R.id.profile_image_signup:
+
+                showchooser();
+                break;
+
+
+            case R.id.but_addemp:
+
+                checkvalidation();
+
+                break;
+        }
+    }
+
+
