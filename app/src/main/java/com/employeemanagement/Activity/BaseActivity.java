@@ -141,5 +141,10 @@ class BaseActivity extends AppCompatActivity {
         }
     }
 
+    public void displayAlert(String msg, LinearLayout ll_splash) {
+        Snackbar.make(ll_splash, msg, Snackbar.LENGTH_SHORT).show();
+    }
+
+
 
 
