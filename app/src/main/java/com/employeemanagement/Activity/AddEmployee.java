@@ -166,4 +166,12 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
 
         ButterKnife.bind(this);
 
+        image_b = false;
+        but_addemp.setOnClickListener(this);
+        img_signup_back.setOnClickListener(this);
+        ll_ae_type.setOnClickListener(this);
+        edt_ae_dob.setOnClickListener(this);
+        profile_image_signup.setOnClickListener(this);
+        imageCompressionLikeWhatsapp = new ImageCompressionLikeWhatsapp(AddEmployee.this)
+
 
