@@ -229,5 +229,26 @@ public class AddVehicle extends BaseActivity implements View.OnClickListener {
                         MainActivity.emparray.get(position).getVehobj().remove(getIntent().getIntExtra("vposition",0));
                     }
 
+                    EmployeeData empobj = new EmployeeData();
+                    Vehicledata vehicledata = new Vehicledata();
+                    vehicledata.setCompany(txt_company.getText().toString());
+                    vehicledata.setModel(txt_model.getText().toString());
+                    vehicledata.setYear(txt_year.getText().toString());
+                    vehicledata.setPlate(edt_plateno.getText().toString());
+                    MainActivity.emparray.get(position).getVehobj().add(vehicledata);
+
+                    Toast.makeText(AddVehicle.this,"Successfully added vehicle", Toast.LENGTH_SHORT).show();
+
+                    intent = new Intent(AddVehicle.this, Dashboard.class);
+                    AddVehicle.this.startActivity(intent);
+
+                    System.out.println(">>>"+empobj);
+                }
+
+                break;
+        }
+    }
+
+
 
 
