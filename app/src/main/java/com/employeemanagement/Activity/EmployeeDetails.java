@@ -104,3 +104,12 @@ public class EmployeeDetails extends BaseActivity implements View.OnClickListene
         {
 
         }
+        else if(MainActivity.emparray.get(getIntent().getIntExtra("position",0)).getType() == "Part time Fixed")
+        {
+
+        }
+        else if(MainActivity.emparray.get(getIntent().getIntExtra("position",0)).getType() == "Part time commisioned")
+        {
+
+        }
+
