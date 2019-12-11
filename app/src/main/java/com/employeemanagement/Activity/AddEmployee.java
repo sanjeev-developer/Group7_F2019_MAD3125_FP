@@ -209,3 +209,14 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
             empobj.setPhoneno(et_ae_phoneno.getText().toString());
             empobj.setDateofbirth(edt_ae_dob.getText().toString());
             empobj.setEmail(edt_ae_email.getText().toString());
+
+            if(txt_ae_type.getText().toString().equals("Intern"))
+            {
+                empobj.setSalary(edt_intern_salary.getText().toString());
+                empobj.setSchoolname(edt_intern_schoolname.getText().toString());
+            }
+            else if(txt_ae_type.getText().toString().equals("FullTime"))
+            {
+                empobj.setSalary(edt_salary_ft.getText().toString());
+                empobj.setBonus(edt_hourworked_ft.getText().toString());
+            }
