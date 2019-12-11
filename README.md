@@ -18,6 +18,9 @@ We have used recycler view to display the employee information.
 
 * We have Listed Payroll and made sure the application shows View Employee details along with their vehicles.
 
+# USING ROOM DATABASE AND DAO
+* We used room database and Dao in the project to store all the necessary information.
+
 # SCREENS:
 * Adding Employees: Here, you can add details of new employee by adding the details of employee. 
 Details such as Name, email id, date of birth using date picker view.  You can also select the employee type such as PartTime, Intern, FullTime,etc.
