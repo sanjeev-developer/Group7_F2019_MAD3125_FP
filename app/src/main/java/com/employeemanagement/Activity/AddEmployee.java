@@ -52,3 +52,9 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.img_signup_back)
     ImageView img_signup_back;
+
+    @BindView(R.id.but_addemp)
+    Button but_addemp;
+
+    @BindView(R.id.edt_ae_fullname)
+    EditText edt_ae_fullname;
