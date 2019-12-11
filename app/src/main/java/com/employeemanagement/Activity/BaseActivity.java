@@ -65,3 +65,14 @@ class BaseActivity extends AppCompatActivity {
         // view.setVisibility(View.VISIBLE);
     }
 
+    //Right to Left
+    // To animate view slide out from right to left
+    public void slide_To_Left_invisible(View view){
+        TranslateAnimation animate = new TranslateAnimation(0,-view.getWidth(),0,0);
+        animate.setDuration(500);
+        animate.setFillAfter(true);
+        view.startAnimation(animate);
+        view.setVisibility(View.GONE);
+    }
+
+
