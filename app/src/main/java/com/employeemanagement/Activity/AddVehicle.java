@@ -86,3 +86,12 @@ public class AddVehicle extends BaseActivity implements View.OnClickListener {
         companydata.add("Bajaj");
         companydata.add("Ford");
         companydata.add("Audi");
+
+        modeldata.add("Base");
+        modeldata.add("Mid-range");
+        modeldata.add("Classic");
+        modeldata.add("Magnum");
+        modeldata.add("Supra");
+        modeldata.add("xdvt");
+        modeldata.add("Magnum-turbo");
+        modeldata.add("elegant");
