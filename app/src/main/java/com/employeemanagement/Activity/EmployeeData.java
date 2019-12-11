@@ -33,3 +33,16 @@ public class EmployeeData extends BaseActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_data);
+
+        ButterKnife.bind(this);
+        card_vae_ed.setOnClickListener(this);
+
+        txt_noe_ed.setText(""+MainActivity.emparray.size());
+
+        for(int i=0; i<MainActivity.emparray.size(); i++)
+        {
+            for(int y =0; y<MainActivity.emparray.get(i).getVehobj().size(); y++)
+            {
+                count++;
+            }
+        }
