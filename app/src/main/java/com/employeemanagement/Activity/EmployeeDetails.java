@@ -112,6 +112,7 @@ public class EmployeeDetails extends BaseActivity implements View.OnClickListene
         {
 
         }
+
         vehAdapter = new VehAdapter(EmployeeDetails.this, MainActivity.emparray, getIntent().getIntExtra("position",0));
         layoutManager = new LinearLayoutManager(EmployeeDetails.this);
         rec_empdetails.setLayoutManager(layoutManager);
@@ -120,3 +121,12 @@ public class EmployeeDetails extends BaseActivity implements View.OnClickListene
         rec_empdetails.setAdapter(vehAdapter);
     }
 
+    @Override
+    public void onClick(View v) {
+
+        intent = new Intent(EmployeeDetails.this, EmployeeList.class);
+        intent.putExtra("decision","viewemp");
+        startActivity(intent);
+
+    }
+}
