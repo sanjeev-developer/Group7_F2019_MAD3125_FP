@@ -5,3 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import com.employeemanagement.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
