@@ -220,3 +220,15 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
                 empobj.setSalary(edt_salary_ft.getText().toString());
                 empobj.setBonus(edt_hourworked_ft.getText().toString());
             }
+            else if(txt_ae_type.getText().toString().equals("Part time Fixed"))
+            {
+                empobj.setRate(edt_rate_pfa.getText().toString());
+                empobj.setHourWorked(edt_hourworked_pfa.getText().toString());
+                empobj.setFixedamount(edt_fixedamount_pfa.getText().toString());
+            }
+            else if(txt_ae_type.getText().toString().equals("Part time commisioned"))
+            {
+                empobj.setRate(edt_rate_ptc.getText().toString());
+                empobj.setHourWorked(edt_hourworked_ptc.getText().toString());
+                empobj.setCommissionpercent(edt_cp_ptc.getText().toString());
+            }
