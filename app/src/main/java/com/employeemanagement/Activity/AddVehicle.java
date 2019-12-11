@@ -175,3 +175,59 @@ public class AddVehicle extends BaseActivity implements View.OnClickListener {
         }
     }
 
+    @Override
+    public void onClick(View v)
+    {
+        switch (v.getId()) {
+
+            case R.id.img_back_addveh:
+
+                intent = new Intent(AddVehicle.this, Dashboard.class);
+                startActivity(intent);
+
+                break;
+
+            case R.id.ll_company:
+
+                sp_company.performClick();
+
+                break;
+
+            case R.id.ll_model:
+
+                sp_model.performClick();
+
+                break;
+
+            case R.id.ll_year:
+
+                sp_year.performClick();
+
+                break;
+
+            case R.id.but_add:
+
+                if(txt_company.getText().toString().equals("Select Company"))
+                {
+                    displayAlert(AddVehicle.this, "Please select the company");
+                }
+                else if(txt_model.getText().toString().equals("Select Model"))
+                {
+                    displayAlert(AddVehicle.this, "Please select the Model");
+                }
+                else if (edt_plateno.getText().toString().equals(""))
+                {
+                    displayAlert(AddVehicle.this, "Please enter the plate no");
+                }
+                else if(txt_year.getText().toString().equals("Select year"))
+                {
+                    displayAlert(AddVehicle.this, "Please select the year");
+                }
+                else
+                {
+                    if(getIntent().getIntExtra("option",0) == 2) {
+                        MainActivity.emparray.get(position).getVehobj().remove(getIntent().getIntExtra("vposition",0));
+                    }
+
+
+
