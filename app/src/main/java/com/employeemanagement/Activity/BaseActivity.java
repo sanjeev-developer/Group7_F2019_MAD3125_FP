@@ -75,4 +75,15 @@ class BaseActivity extends AppCompatActivity {
         view.setVisibility(View.GONE);
     }
 
+    //Top to Bottom
+    // To animate view slide out from top to bottom
+    public void slideToBottom(View view){
+        TranslateAnimation animate = new TranslateAnimation(0,0,0,view.getHeight());
+        animate.setDuration(500);
+        animate.setFillAfter(true);
+        view.startAnimation(animate);
+        view.setVisibility(View.GONE);
+    }
+
+
 
