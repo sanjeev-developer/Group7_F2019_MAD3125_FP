@@ -131,5 +131,15 @@ class BaseActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    public void hidekeyboard()
+    {
+        try {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
