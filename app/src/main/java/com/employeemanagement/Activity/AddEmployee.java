@@ -402,6 +402,23 @@ public class AddEmployee extends BaseActivity implements View.OnClickListener {
         return path;
     }
 
+    public File getPhotoFileUri() {
+        // Get safe storage directory for photos
+        // Use `getExternalFilesDir` on Context to access package-specific directories.
+        // This way, we don't need to request external read/write runtime permissions.
+        File mediaStorageDir = new File(AddEmployee.this.getExternalFilesDir(Environment.DIRECTORY_PICTURES), "Employee");
+
+        // Create the storage directory if it does not exist
+        if (!mediaStorageDir.exists() && !mediaStorageDir.mkdirs()) {
+            Log.e(TAG, "failed to create directory");
+        }
+
+        // Return the file target for the photo based on filename
+        File file = new File(mediaStorageDir.getPath() + File.separator + System.currentTimeMillis() + ".jpg");
+
+        return file;
+    }
+
 
 
 
